@@ -53,13 +53,13 @@
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/my_icon.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/my_icon.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/my_icon.png?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Windows,修改注册表," />
+  <meta name="keywords" content="Windows,注册表," />
 
 
 
@@ -83,14 +83,14 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="在win10家庭版环境下更改C盘中的用户名">
 <meta property="og:url" content="http://example.com/2022/04/11/%E5%9C%A8win10%E5%AE%B6%E5%BA%AD%E7%89%88%E7%8E%AF%E5%A2%83%E4%B8%8B%E6%9B%B4%E6%94%B9C%E7%9B%98%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D/index.html">
-<meta property="og:site_name" content="乱糟糟的博客">
+<meta property="og:site_name" content="Clutterの博客">
 <meta property="og:description" content="笔记背景因年少无知，当初把电脑用户名设置成了中文，因为一直不碍事就没研究，最近因为装nvm无法install下载管理nodejs版本，百度了一番，发现是因为C:\user下的用户名为中文，在cmd窗口下乱码了，无法找到这个文件路径，从而无法下载安装nodejs。 笔记目标将window10家庭版系统中C:\user\【我的名字】改为C:\user\【MyUserName】目录下的用户名修改为英文,">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-04-11T13:30:46.000Z">
-<meta property="article:modified_time" content="2022-04-11T14:22:18.129Z">
-<meta property="article:author" content="乱糟糟">
+<meta property="article:modified_time" content="2022-04-12T02:23:03.633Z">
+<meta property="article:author" content="Clutter·乱糟糟">
 <meta property="article:tag" content="Windows">
-<meta property="article:tag" content="修改注册表">
+<meta property="article:tag" content="注册表">
 <meta name="twitter:card" content="summary">
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <title>在win10家庭版环境下更改C盘中的用户名 | 乱糟糟的博客</title>
+  <title>在win10家庭版环境下更改C盘中的用户名 | Clutterの博客</title>
   
 
 
@@ -157,12 +157,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">乱糟糟的博客</span>
+        <span class="site-title">Clutterの博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">记录学习的笔记及遇到的问题</p>
       
   </div>
 
@@ -279,11 +279,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="乱糟糟的博客">
+      <meta itemprop="name" content="Clutterの博客">
     </span>
 
     
@@ -363,11 +363,11 @@
       
 
       
-        <h3 id="笔记背景"><a href="#笔记背景" class="headerlink" title="笔记背景"></a>笔记背景</h3><p>因年少无知，当初把电脑用户名设置成了中文，因为一直不碍事就没研究，最近因为装nvm无法install下载管理nodejs版本，百度了一番，发现是因为C:\user下的用户名为中文，在cmd窗口下乱码了，无法找到这个文件路径，从而无法下载安装nodejs。</p>
-<h3 id="笔记目标"><a href="#笔记目标" class="headerlink" title="笔记目标"></a>笔记目标</h3><p>将window10家庭版系统中C:\user\【我的名字】改为C:\user\【MyUserName】目录下的用户名修改为英文,我的名字原中文名称，【MyUserName】为修改后的英文名称，你可以改为自己想要的英文名称。亲测有效！</p>
-<h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>打开控制面板进入用户账户界面点击更改账户名称，将名称改为【MyUserName】。</p>
-<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>win+R输入regedit，进入注册表编辑器，再打开目录‘计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList’，从ProfileList目录中挨个检查ProfileImagePath的值，若为C:\user\【我的名字】，打开ProfileImagePath修改它的值为C:\user\【MyUserName】。</p>
-<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>重启计算机，计算机打开后会显示‘win10无法登陆到你的账户’让你注销或关闭，并且之前计算机中的文件都不显示了，此时你不用管他，直接win+E打开文件资源管理器，进入C:\user目录，这时你会发现多了一个Temp文件，并且【我的名字】还是中文，Temp文件是计算机为你自动创建的一个临时安全账户文件方便你进入你的计算机，这时你右键【我的名字】会发现文件可以重命名了，记住名称一定要改成之前在账户页面以及注册表编辑器中改的【MyUserName】。这样重启电脑就发现<br>你的文件都回来了，而且C:\user\【我的名字】也变成了C:\user【MyUserName】。</p>
+        <h2 id="笔记背景"><a href="#笔记背景" class="headerlink" title="笔记背景"></a>笔记背景</h2><p>因年少无知，当初把电脑用户名设置成了中文，因为一直不碍事就没研究，最近因为装nvm无法install下载管理nodejs版本，百度了一番，发现是因为C:\user下的用户名为中文，在cmd窗口下乱码了，无法找到这个文件路径，从而无法下载安装nodejs。</p>
+<h2 id="笔记目标"><a href="#笔记目标" class="headerlink" title="笔记目标"></a>笔记目标</h2><p>将window10家庭版系统中C:\user\【我的名字】改为C:\user\【MyUserName】目录下的用户名修改为英文,我的名字原中文名称，【MyUserName】为修改后的英文名称，你可以改为自己想要的英文名称。亲测有效！</p>
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>打开控制面板进入用户账户界面点击更改账户名称，将名称改为【MyUserName】。</p>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>win+R输入regedit，进入注册表编辑器，再打开目录‘计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList’，从ProfileList目录中挨个检查ProfileImagePath的值，若为C:\user\【我的名字】，打开ProfileImagePath修改它的值为C:\user\【MyUserName】。</p>
+<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><p>重启计算机，计算机打开后会显示‘win10无法登陆到你的账户’让你注销或关闭，并且之前计算机中的文件都不显示了，此时你不用管他，直接win+E打开文件资源管理器，进入C:\user目录，这时你会发现多了一个Temp文件，并且【我的名字】还是中文，Temp文件是计算机为你自动创建的一个临时安全账户文件方便你进入你的计算机，这时你右键【我的名字】会发现文件可以重命名了，记住名称一定要改成之前在账户页面以及注册表编辑器中改的【MyUserName】。这样重启电脑就发现<br>你的文件都回来了，而且C:\user\【我的名字】也变成了C:\user【MyUserName】。</p>
 <h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><p>因为计算机之前在使用的时候很多程序都要配置环境变量，此时计算机中的某些程序会运行不了。所以要右键我的电脑—&gt;属性—&gt;高级系统设置—&gt;环境变量，将其中用户变量与系统变量中的【我的名字】改为【MyUserName】。</p>
 
       
@@ -379,6 +379,35 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>测试设置，请勿打赏</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WechatPay.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -388,7 +417,7 @@
           
             <a href="/tags/Windows/" rel="tag"># Windows</a>
           
-            <a href="/tags/%E4%BF%AE%E6%94%B9%E6%B3%A8%E5%86%8C%E8%A1%A8/" rel="tag"># 修改注册表</a>
+            <a href="/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/" rel="tag"># 注册表</a>
           
         </div>
       
@@ -410,10 +439,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/04/11/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -479,6 +504,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
               <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -490,7 +519,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -512,7 +541,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -567,7 +596,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">笔记背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87"><span class="nav-number">2.</span> <span class="nav-text">笔记目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="nav-number">3.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="nav-number">4.</span> <span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5"><span class="nav-number">5.</span> <span class="nav-text">第三步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A"><span class="nav-number">5.1.</span> <span class="nav-text">注意：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">笔记背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0%E7%9B%AE%E6%A0%87"><span class="nav-number">2.</span> <span class="nav-text">笔记目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="nav-number">3.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="nav-number">4.</span> <span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5"><span class="nav-number">5.</span> <span class="nav-text">第三步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A"><span class="nav-number">5.0.1.</span> <span class="nav-text">注意：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -591,21 +620,15 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">乱糟糟</span>
+  <span class="author" itemprop="copyrightHolder">Clutter·乱糟糟</span>
 
   
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -779,5 +802,5 @@
 
   
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
