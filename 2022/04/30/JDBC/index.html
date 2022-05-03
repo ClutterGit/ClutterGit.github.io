@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="JDBCjdbcjava Database Connectivity Java数据库连接，利用java语言连接数据库的一门技术 12345678910111213141516171819&#x2F;&#x2F;1.注册数据库连接驱动器Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#x2F;&#x2F;2.利用DriverManager连接数据库Connection connectio">
+<meta name="description" content="jdbcjava Database Connectivity Java数据库连接，利用java语言连接数据库的一门技术 12345678910111213141516171819&#x2F;&#x2F;1.注册数据库连接驱动器Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#x2F;&#x2F;2.利用DriverManager连接数据库Connection connection &#x3D;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaWeb">
+<meta property="og:title" content="JDBC">
 <meta property="og:url" content="http://example.com/2022/04/30/JDBC/index.html">
 <meta property="og:site_name" content="Clutterの博客">
-<meta property="og:description" content="JDBCjdbcjava Database Connectivity Java数据库连接，利用java语言连接数据库的一门技术 12345678910111213141516171819&#x2F;&#x2F;1.注册数据库连接驱动器Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#x2F;&#x2F;2.利用DriverManager连接数据库Connection connectio">
+<meta property="og:description" content="jdbcjava Database Connectivity Java数据库连接，利用java语言连接数据库的一门技术 12345678910111213141516171819&#x2F;&#x2F;1.注册数据库连接驱动器Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#x2F;&#x2F;2.利用DriverManager连接数据库Connection connection &#x3D;">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-04-30T05:24:00.000Z">
-<meta property="article:modified_time" content="2022-05-03T09:15:09.108Z">
+<meta property="article:modified_time" content="2022-05-03T09:18:31.299Z">
 <meta property="article:author" content="Clutter·乱糟糟">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="JavaWeb">
@@ -129,7 +129,7 @@
 
 
 
-  <title>JavaWeb | Clutterの博客</title>
+  <title>JDBC | Clutterの博客</title>
   
 
 
@@ -293,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaWeb</h1>
+          <h1 class="post-title" itemprop="name headline">JDBC</h1>
         
 
         <div class="post-meta">
@@ -365,7 +365,7 @@
       
 
       
-        <h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="jdbc"><a href="#jdbc" class="headerlink" title="jdbc"></a>jdbc</h2><p>java Database Connectivity</p>
+        <h2 id="jdbc"><a href="#jdbc" class="headerlink" title="jdbc"></a>jdbc</h2><p>java Database Connectivity</p>
 <p>Java数据库连接，利用java语言连接数据库的一门技术</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.注册数据库连接驱动器</span></span><br><span class="line">Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>);</span><br><span class="line"><span class="comment">//2.利用DriverManager连接数据库</span></span><br><span class="line"><span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> DriverManager.getConnection(</span><br><span class="line">    <span class="string">&quot;jdbc:mysql://localhost:3306/jdbc?characterEncoding=utf-8&quot;</span>,</span><br><span class="line">    <span class="string">&quot;root&quot;</span>,</span><br><span class="line">    <span class="string">&quot;123456&quot;</span>);</span><br><span class="line"><span class="comment">//3.获取传输器statement</span></span><br><span class="line"><span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> connection.createStatement();</span><br><span class="line"><span class="comment">//4.利用传输器statement向服务器发送sql语句执行</span></span><br><span class="line">statement.executeUpdate(sql语句);<span class="comment">//增删改  返回处理数据的个数值</span></span><br><span class="line"><span class="type">ResultSet</span> <span class="variable">resultSet</span> <span class="operator">=</span> statement.executeQuery(sql语句);<span class="comment">//查  返回resultSet结果集</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*处理数据</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//5.释放资源 离得越近越早释放</span></span><br><span class="line">resultSet.close();</span><br><span class="line">statement.close();</span><br><span class="line">connection.close();</span><br></pre></td></tr></table></figure>
 
@@ -650,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC"><span class="nav-number">1.</span> <span class="nav-text">JDBC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#jdbc"><span class="nav-number">1.1.</span> <span class="nav-text">jdbc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c3p0%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="nav-number">1.2.</span> <span class="nav-text">c3p0数据库连接池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E7%9A%84%E5%85%B6%E4%BB%96%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.2.</span> <span class="nav-text">设置数据库连接基本信息的其他方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E5%8F%8A%E5%9B%9B%E4%B8%AA%E7%89%B9%E6%80%A7"><span class="nav-number">1.3.</span> <span class="nav-text">事务及四个特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySql%E4%B8%AD%E7%9A%84%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.3.1.</span> <span class="nav-text">MySql中的事务</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jdbc"><span class="nav-number">1.</span> <span class="nav-text">jdbc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c3p0%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="nav-number">2.</span> <span class="nav-text">c3p0数据库连接池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">创建方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E7%9A%84%E5%85%B6%E4%BB%96%E6%96%B9%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">设置数据库连接基本信息的其他方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E5%8F%8A%E5%9B%9B%E4%B8%AA%E7%89%B9%E6%80%A7"><span class="nav-number">3.</span> <span class="nav-text">事务及四个特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySql%E4%B8%AD%E7%9A%84%E4%BA%8B%E5%8A%A1"><span class="nav-number">3.1.</span> <span class="nav-text">MySql中的事务</span></a></li></ol></li></ol></div>
             
 
           </div>
